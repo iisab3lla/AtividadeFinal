@@ -61,7 +61,7 @@ app.post('/signup',async (request, response)=>{
 });
 
 
-app.get('/login',async(request, response) =>{
+app.post('/login',async(request, response) =>{
 
     const dados = request.body;
 
@@ -80,7 +80,7 @@ app.get('/login',async(request, response) =>{
     const verificarEmailLogin = users.find((usuario) => usuario.email === email);
 
     if(!verificarEmailLogin){
-        response.status(404).json({Mensagem:"Email não encontrado no sistema,verifique ou crie uma conta"});
+        response.status(404).json({Mensagem:"Email não encontrado no sistema, verifique ou crie uma conta"});
         return;
     }
 
